@@ -6,7 +6,7 @@ const notifier = require('node-notifier');
 const CONFIG = {
   origin: 'MOW',
   departure: 'KGF',
-  date: '3009', // 30 сент
+  date: '1010', // 30 сент
   personCount: 1, // но это не точно
   period: 30_000, // ms
 }
@@ -26,7 +26,7 @@ const url = `https://www.aviasales.ru/search/${CONFIG.origin}${CONFIG.date}${CON
         return document.querySelector('[data-test-id="price"]').textContent;
       });
       notifier.notify(`success! Price: ${price}`);
-      await new Promise(r => setTimeout(r, pause));
+      await new Promise(r => setTimeout(r, CONFIG.period));
       await page.click('.form-submit');
       console.log('click submit');
       // isTicketsFounded = true;
