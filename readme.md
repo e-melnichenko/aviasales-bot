@@ -1,2 +1,8 @@
-npm i
-node main.js
+# Aviasales bot
+install deps
+
+        npm i
+
+run
+
+        node main.js
